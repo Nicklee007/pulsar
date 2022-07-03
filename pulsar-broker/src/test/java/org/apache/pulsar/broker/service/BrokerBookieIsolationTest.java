@@ -436,6 +436,7 @@ public class BrokerBookieIsolationTest {
         Set<BookieId> isolatedBookies = Sets.newHashSet(bookies[2].getBookieId(),
                 bookies[3].getBookieId());
 
+        setDefaultIsolationGroup(brokerBookkeeperClientIsolationGroups, zkClient, defaultBookies);
         setDefaultIsolationGroup(tenantNamespaceIsolationGroups, zkClient, isolatedBookies);
 
         ServiceConfiguration config = new ServiceConfiguration();
